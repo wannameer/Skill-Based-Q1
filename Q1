@@ -1,0 +1,19 @@
+import socket
+
+def client_program():
+    host = "izani.synology.me" # server host name
+    port = 8443 # server port number
+
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_ST>
+    client_socket.connect((host, port)) # connect to the server
+
+    message = "2023149523" # message to send
+    client_socket.send(message.encode()) # send message in bytes
+
+    response = client_socket.recv(1024).decode() # receive respo>
+    print("Response from server:", response) # print response
+
+    client_socket.close() # close socket
+
+if __name__ == '__main__':
+    client_program()
